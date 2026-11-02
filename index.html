@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>小卖部 · 激活码服务</title>
+<meta name="description" content="小米手环 10 Pro 快应用「小卖部」自助兑换：填入兑换码与手环上的设备码，即可在本机算出激活码。全部计算在你的浏览器里完成，不会上传。">
+<meta name="theme-color" content="#0b1020">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>小卖部 · 激活码服务</h1>
+    <div class="sub">小米手环 10 Pro 快应用 · 摆货架，迎客人，把小摊做成连锁店</div>
+    <div class="price">售价 1 元</div>
+  </header>
+
+  <section class="pane">
+    <div class="card">
+      <h2>自助兑换</h2>
+      <p class="dim">把<b>兑换码</b>和手环上的<b>设备码</b>填进来，直接得到这台手环专用的激活码。全部计算在你自己的浏览器里完成，不会上传到任何服务器。只有本站已发行的兑换码能兑换。</p>
+
+      <label class="field" for="rRc">兑换码（12 位数字，不用输分隔符）</label>
+      <input type="text" id="rRc" inputmode="numeric" autocomplete="off" placeholder="例如 010006109174">
+      <label class="field" for="rDev">设备码（10 位数字，手环上显示为 5-5 两段）</label>
+      <input type="text" id="rDev" inputmode="numeric" autocomplete="off" placeholder="例如 21363-93151">
+
+      <div class="row">
+        <button id="rBtn">兑换出激活码</button>
+        <button class="ghost" id="rClear">清空</button>
+      </div>
+
+      <div class="msg" id="rMsg"></div>
+
+      <div class="out" id="rOut" hidden>
+        <div class="ac" id="rAc">—</div>
+        <div class="dev" id="rLine"></div>
+        <div class="verdict" id="rVerdict"></div>
+        <div class="row"><button class="ghost" id="rCopy" disabled>复制激活码</button></div>
+      </div>
+
+      <div class="note">
+        兑换码来自商家（下单后私信发给你的一串 12 位数字）；设备码是手环上「小卖部」激活页显示的那串 10 位数字。
+        两样一起才能算码：兑换码是购买凭证，设备码决定这台手环专属的激活码——<b>每台手环的激活码都不一样</b>，换台手环要重新兑换。
+        算出的激活码到手环激活页输入，点「激活」即可开始经营。
+      </div>
+    </div>
+  </section>
+
+  <section class="pane">
+    <div class="card">
+      <h2>三步激活</h2>
+      <ol class="steps">
+        <li><b>打开手环上的「小卖部」</b>，激活页会显示本机设备码（10 位数字），先记下来。</li>
+        <li><b>在这里填入兑换码和设备码</b>，点「兑换出激活码」，得到 12 位激活码。</li>
+        <li><b>回到手环激活页</b>，先输入兑换码，再输入激活码，点「激活」即可进入游戏。</li>
+      </ol>
+      <div class="note">
+        手环上没有网络也能玩：激活校验是在手环本地完成的，所以本站算出的码只对<b>同一台手环</b>有效。
+      </div>
+    </div>
+  </section>
+
+  <section class="pane">
+    <div class="card">
+      <h2>常见问题</h2>
+      <dl class="faq">
+        <dt>兑换码从哪来？</dt>
+        <dd>在<b>爱发电</b>下单后，商家会把兑换码私信发给你。每个兑换码对应一份。</dd>
+
+        <dt>设备码是什么？</dt>
+        <dd>手环上「小卖部」激活页显示的那串 10 位数字，每台设备都不同。它不涉及隐私，只是用来把激活码绑定到你这台手环。</dd>
+
+        <dt>换手环 / 重装之后怎么办？</dt>
+        <dd>设备码变了，激活码也会跟着变。用原来的兑换码在新设备上再兑换一次即可，不用重复付款。</dd>
+
+        <dt>提示「不在本站已发行批次」？</dt>
+        <dd>说明这串数字不是本站发放的兑换码，或抄错了。请向商家核对后重新输入。</dd>
+
+        <dt>我的数据会被上传吗？</dt>
+        <dd>不会。本站是纯静态页面，兑换与计算全部在你的浏览器里完成，没有任何服务端记录。</dd>
+      </dl>
+    </div>
+  </section>
+
+  <footer>
+    小卖部 · 激活码服务 · 静态站点，数据不出浏览器
+  </footer>
+</div>
+
+<script src="js/issued-digest.js"></script>
+<script src="js/issued-codes.js"></script>
+<script src="js/activation-core.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
